@@ -1,0 +1,81 @@
+html{
+	min-height:100%;
+	position:relative;
+}
+body{
+	background:#606dbc;
+	height:100%;
+	/*font-family: "Lucida Console", Monaco, monospace;*/
+		/*background: linear-gradient(
+  to bottom,
+ #606dbc,
+  #606dbc 10px,
+  #465298 10px,
+  #465298 20px
+);*/
+}
+@font-face {
+    font-family: myName;
+    src: url('data/Sweet Sensations Personal Use.ttf');
+
+}
+
+.container{
+	width:90%;
+	background:#465298;
+	min-height:100%;
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+}
+
+.heading{
+
+	text-align: center;
+
+}
+.heading h2{
+	font-family:myName;
+	font-size: 5em;
+}
+
+nav{
+	padding-top:.2em;
+
+}
+
+nav a{
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size:1.3em;
+	color:#adadad;
+
+}
+
+nav a:hover{
+	text-decoration: none;
+	color: #e1e9f7;
+}
+/*nav a:visited{
+	text-decoration: none;
+	color:#adadad;
+}*/
+
+nav a:link{
+	text-decoration: none;
+	color:#adadad;
+}
+nav a:active{
+	text-decoration: none;
+	color:#adadad;
+}
+
+/*.navbar-default{
+	background-color: red;
+
+
+}*/
