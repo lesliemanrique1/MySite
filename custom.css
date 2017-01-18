@@ -3,9 +3,9 @@ html{
 	position:relative;
 }
 body{
-	background:#606dbc;
+	background:#465298;
 	height:100%;
-	/*font-family: "Lucida Console", Monaco, monospace;*/
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 		/*background: linear-gradient(
   to bottom,
  #606dbc,
@@ -22,7 +22,7 @@ body{
 
 .container{
 	width:90%;
-	background:#465298;
+	background:#606dbc;
 	min-height:100%;
 	position:absolute;
 	top:0;
@@ -72,6 +72,22 @@ nav a:link{
 nav a:active{
 	text-decoration: none;
 	color:#adadad;
+}
+
+#about{
+	padding-top:10px;
+	text-align: center;
+}
+#about h2{
+	/*font-family: myName;*/
+	font-size: 3em;
+	font-weight: bold;
+}
+
+#about p{
+	font-size: 1.2em;
+	line-height: 1.5em;
+	font-color:white;
 }
 
 /*.navbar-default{
