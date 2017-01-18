@@ -1,0 +1,66 @@
+{
+	"diario":{
+		"title":"Diario",
+		"desc":"Diario is a javascript express application that provides a secure place to log your daily activities and memories. You may also attach images to your entries, so they all show up in one place. Eventually, I hope to add a 'friends' feature, so you can share your entries with specific users. You must be a registered user in order to use this application. Don't worry, your secrets are safe on Diario!",
+		"status":"working prototype",
+		"copywrite":"2016",
+		"languages":"[javascript,html,css]",
+		"libraries/tools":"[node.js,express,passportjs,nodemailer]",
+		"media":"[recordings/diario-create.mov,recordings/diario-create-2.mov,recordings/diario-login.mov]",
+		"code":"",
+		"site":"https://github.com/lesliemanrique1/diario",
+
+	},
+	"scalica-recommender-system":{
+		"title":"Scalica Friend Recommender",
+		"status":"complete",
+		"copywrite":"2016",
+		"desc":"This was a group project for Yair Sovran's Fall 2016 course Large Scale Web Applications. We implemented a friend to friend recommender system that allows users, upon login, to see which other users they would want to follow based upon the friends they currently follow. We built our recommender system on top of a django application called Scalica, hosted on Amazon Web Services (AWS) EC2. A chron job is used to schedule when recommendations should be created. The chron job pipes data from the followers table (MySQL) in scalica to a bucket in s3. Amazon EMR is invoked to run a MapReduce job to formulate the recommendations and data is sent to a Redis store on EC2. An RPC client connects to an RPC server in order to gather the data from Redis and display it on the user page.",
+		"media":"[images/scalica.png]",
+		"languages":"[Python,java,html,css]",
+		"libraries/tools":"[MySQL,Redis, Django,AWS EC2,AWS EMR, AWS S3, gRPC]",
+		"site":"http://52.15.170.236:8000/micro/"
+	},
+	"anime-review-site":{
+		"title":"Anime Review Site",
+		"desc":"This website is an interface for reviewing animes and finding good animes to watch!",
+		"status":"complete",
+		"copywrite":"2015",
+		"languages":["php,MySQL,html,css"],
+		"libraries/tools":"bootstrap",
+		"site":"http://i6.cims.nyu.edu/~ljm391/LAMP/list.php",
+
+	},
+	"Predictive Analytics Term Paper":{
+		"title":"Predicting Breast Cancer: Using the Wisconsin Breast Cancer Dataset",
+		"desc":"term paper for Predictive Analytics course (CSCI-GA 3033). This paper explores several classificaiton models that can be applied to the Wisconsin Breast Cancer Dataset." ,
+		"status":"complete",
+		"copywrite":"2016",
+		"languages":"python",
+		"libraries/tools":"[sklearn,pandas,iPython]",
+		"site":"https://github.com/lesliemanrique1/PredictiveAnalytics/tree/master/TermPaper"
+
+	},
+	"Document Summarization":{
+		"title":"Document Summarization of Biological Articles",
+		"desc":"Abstracts are very helpful to researchers when searching for useful information to accomplish tasks. Such tasks can be for academic or recreational purposes. However, often times we have to read very lengthy articles in order to obtain the information that we need. Reading these articles can also be in vain, if the information is not found. We need abstracts or summarizations to realize ahead of time that the article is suited for in depth study. I approach the issue of creating automatic summarizations from text files by applying TF-IDF (term frequency – inverse document frequency). Using TF-IDF I segment the document into sentences and calculate the TFIDF of each token. Afterwards, I sum up the TF-IDF’s of each individual token per sentence. I compare the total TF-IDF’s of each sentence to each other – thus extracting the most important sentences. The Idea is to find out if TF-IDF alone produces good summaries, when compared to human summarizations",
+		"status":"complete",
+		"copywrite":"2016",
+		"languages":"python",
+		"libraries/tools":"[NLTK,iPython]",
+		"site":"https://github.com/lesliemanrique1/Document_Summarization"
+	},
+	"HMM Part of Speech Tagger":{
+		"title":"HMM Part Of Speech Tagger",
+		"desc":"Uses the Viterbi algorithm to implement a part of speech tagger that achieves over 95% accuracy.",
+		"status":"complete",
+		"copywrite":"2015",
+		"languages":"python",
+		"libraries/tools":"[NLTK,iPython]",
+		"site":"https://github.com/lesliemanrique1/HMM-Part-of-Speech-Tagger"
+	}
+	
+
+
+
+}
