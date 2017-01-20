@@ -23,7 +23,7 @@
 	},
 	"anime-review-site":{
 		"title":"Anime Review Site",
-		"desc":"This website is an interface for reviewing animes and finding good animes to watch! It's built with PHP, MySQL, HTML and CSS",
+		"desc":"This website is an interface for reviewing animes and finding good animes to watch!",
 		"status":"complete",
 		"copywrite":"2015",
 		"languages":["php,MySQL,html,css"],

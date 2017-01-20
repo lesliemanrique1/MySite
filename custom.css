@@ -23,6 +23,9 @@ body{
 .container{
 	width:90%;
 	background:#606dbc;
+	resize: both;
+	overflow:auto;
+	/*background:#afc7ed;*/
 	min-height:100%;
 	position:absolute;
 	top:0;
@@ -90,6 +93,31 @@ nav a:active{
 	font-color:white;
 }
 
+#projects{
+	text-align: center;
+}
+#projects h2{
+	font-size: 3em;
+	font-weight: bold;
+}
+/*projects*/
+.thumbnails{
+	width:50%;
+	display:inline-block;
+	list-style-type:none;
+
+}
+
+.thumbnails>li{
+	/*float:left;*/
+	background-color: #ef8b43;
+	padding-top:10px;
+	 margin:10px 0;
+	padding-bottom:10px;
+	font-size:1.4em;
+	width:100%;
+	height:3em;
+}
 /*.navbar-default{
 	background-color: red;
 
