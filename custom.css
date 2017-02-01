@@ -101,14 +101,15 @@ nav a:active{
 	font-weight: bold;
 }
 /*projects*/
-.thumbnails{
+
+#thumbnails{
 	width:50%;
 	display:inline-block;
 	list-style-type:none;
 
 }
 
-.thumbnails>li{
+#thumbnails>li{
 	/*float:left;*/
 	background-color: #ef8b43;
 	padding-top:10px;

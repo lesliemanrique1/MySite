@@ -1,0 +1,41 @@
+var JSONURL = "https://spreadsheets.google.com/feeds/list/1WPEQSscDrI8Rdk5daHk7yXrEYdFBFBURfMbQzWtAQuY/1/public/basic?alt=json";
+
+function callback(data){
+    var rows = [];
+    var cells = data.feed.entry;
+    
+    for (var i = 0; i < cells.length; i++){
+        var rowObj = {};
+        rowObj.title = cells[i].title.$t;
+        console.log(rowObj.title); 
+        var rowCols = cells[i].content.$t.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+        console.log("rowCols",rowCols);
+        
+        for (var j = 0; j < rowCols.length; j++){
+            var keyVal = rowCols[j].split(':');
+            if(j===6){
+                rowObj[keyVal[0].trim()] = keyVal[1].trim() + keyVal[2].trim();
+            }
+            else{
+                rowObj[keyVal[0].trim()] = keyVal[1].trim();
+            }
+            
+        }
+        rows.push(rowObj);
+    }
+    
+    var raw = document.createElement('p');
+    raw.innerText = JSON.stringify(rows);
+    document.body.appendChild(raw);
+}
+
+$(document).ready(function(){
+    
+    $.ajax({
+        url:JSONURL,
+        success: function(data){
+            callback(data);
+        }
+    });
+
+});
