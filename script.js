@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	    data = rows;
 	    console.log(data[0]);
+	    createThumbnails(data);
 	    
 	    // var raw = document.createElement('p');
 	    // raw.innerText = JSON.stringify(rows);
@@ -98,13 +99,33 @@ document.addEventListener("DOMContentLoaded",function(){
 	});
 
 
-	function createThumbnails(){
+	function createThumbnails(data){
+		console.log("creating...");
 		var pContainer = document.getElementById("thumbnails"); 
-		for(var i = 0; i<data.length; i++){
+		console.log(pContainer);
+		console.log(data.length);
+		for(i = 0; i<data.length; i++){
 			//create buttons li
-			v
+			var project = document.createElement("li");
+			var projectText = document.createElement("p");
+			projectText.setAttribute('id','projectTitle');
+			projectText.innerHTML = data[i].title;
+			project.appendChild(projectText);
+			project.addEventListener('click',projectClick);
+			pContainer.appendChild(project);
+
 
 
 		}
+	}
+ome
+
+	function projectClick(evt){
+		// console.log(index);
+		this.classList.toggle('click');
+		var desc = document.createElement('div');
+		desc.setAttribute('id','drop'); 
+		desc.innerHTML = "Hello";
+		this.appendChild(desc);
 	}
 });
