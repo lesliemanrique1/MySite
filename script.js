@@ -48,6 +48,14 @@ document.addEventListener("DOMContentLoaded",function(){
 	var JSONURL = "https://spreadsheets.google.com/feeds/list/1WPEQSscDrI8Rdk5daHk7yXrEYdFBFBURfMbQzWtAQuY/1/public/basic?alt=json";
 
 	var data = ""; 
+
+	$.ajax({
+		url:JSONURL,
+	    success: function(data){
+	    	callback(data);
+	    }
+	 });
+
 	function callback(data){
 	    var rows = [];
 	    var cells = data.feed.entry;
@@ -79,6 +87,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	    data = rows;
 	    console.log(data[0]);
+	    
 	    createThumbnails(data);
 	    
 	    // var raw = document.createElement('p');
@@ -87,16 +96,16 @@ document.addEventListener("DOMContentLoaded",function(){
 	}
 
 
-	$(document).ready(function(){
+	// $(document).ready(function(){
 	    
-	    $.ajax({
-	        url:JSONURL,
-	        success: function(data){
-	            callback(data);
-	        }
-	    });
+	//     $.ajax({
+	//         url:JSONURL,
+	//         success: function(data){
+	//             callback(data);
+	//         }
+	//     });
 
-	});
+	// });
 
 
 	function createThumbnails(data){
@@ -106,26 +115,60 @@ document.addEventListener("DOMContentLoaded",function(){
 		console.log(data.length);
 		for(i = 0; i<data.length; i++){
 			//create buttons li
+			var title = data[i].title;
 			var project = document.createElement("li");
+			project.setAttribute("id",i);
 			var projectText = document.createElement("p");
-			projectText.setAttribute('id','projectTitle');
-			projectText.innerHTML = data[i].title;
+			projectText.setAttribute('class','projectTitle');
+			projectText.innerHTML = title;
 			project.appendChild(projectText);
-			project.addEventListener('click',projectClick);
+			project.addEventListener('click',function(){
+				console.log(this.classList);
+				if(this.classList.contains('click')){
+					//remove div with id id drop 
+					// console.log(document.getElementById(this.childNodes[1].id));
+					this.removeChild(document.getElementById(this.childNodes[1].id));
+					this.removeAttribute("class");
+
+				}
+				else{
+					this.setAttribute('class','click');
+					//create div with id drop 
+					var desc = document.createElement('div');
+					desc.setAttribute('id','drop'); 
+					desc.innerHTML = "Hellooooo";
+					this.appendChild(desc);
+					// console.log("data\t",data);
+					writeDiv(data,this);
+
+
+				}
+	
+				
+
+
+			});
 			pContainer.appendChild(project);
 
 
 
 		}
 	}
-ome
 
-	function projectClick(evt){
-		// console.log(index);
-		this.classList.toggle('click');
-		var desc = document.createElement('div');
-		desc.setAttribute('id','drop'); 
-		desc.innerHTML = "Hello";
-		this.appendChild(desc);
+
+
+	function writeDiv(data,proj){
+		console.log(proj);
+		console.log(data);
 	}
+
+	// function projectClick(evt){
+	// 	// console.log(index);
+	// 	this.classList.toggle('click');
+	// 	var desc = document.createElement('div');
+	// 	desc.setAttribute('id','drop'); 
+	// 	desc.innerHTML = "Hellooooo";
+	// 	this.appendChild(desc);
+	// 	console.log("data\t",data);
+	// }
 });
