@@ -126,20 +126,13 @@ document.addEventListener("DOMContentLoaded",function(){
 				console.log(this.classList);
 				if(this.classList.contains('click')){
 					//remove div with id id drop 
-					// console.log(document.getElementById(this.childNodes[1].id));
-					this.removeChild(document.getElementById(this.childNodes[1].id));
-					this.removeAttribute("class");
+					removeDiv(this,this.childNodes[1].id);
+				
 
 				}
 				else{
 					this.setAttribute('class','click');
-					//create div with id drop 
-					var desc = document.createElement('div');
-					desc.setAttribute('id','drop'); 
-					desc.innerHTML = "Hellooooo";
-					this.appendChild(desc);
-					// console.log("data\t",data);
-					writeDiv(data,this);
+					writeDiv(data,this,this.id);
 
 
 				}
@@ -156,19 +149,44 @@ document.addEventListener("DOMContentLoaded",function(){
 	}
 
 
+	function removeDiv(proj,name){
+		proj.removeChild(document.getElementById(name)); 
+		proj.removeAttribute("class");
+	}
+	function writeDiv(data,proj,index){
+		var container = document.createElement('div');
+		container.setAttribute('id','drop'); 
 
-	function writeDiv(data,proj){
-		console.log(proj);
-		console.log(data);
+		var desc = document.createElement('p');
+		desc.setAttribute("class" , "desc");
+		
+		var d = data[index]["desc"];
+		desc.innerHTML = d.substring(1,d.length-1);
+
+		container.appendChild(desc);
+
+		media(data,proj,index);
+
+		proj.appendChild(container);
+
+		// console.log(proj);
+		// console.log(data);
+		// console.log(index);
+		console.log(data[index]);
 	}
 
-	// function projectClick(evt){
-	// 	// console.log(index);
-	// 	this.classList.toggle('click');
-	// 	var desc = document.createElement('div');
-	// 	desc.setAttribute('id','drop'); 
-	// 	desc.innerHTML = "Hellooooo";
-	// 	this.appendChild(desc);
-	// 	console.log("data\t",data);
-	// }
+	function media(data,proj,index){
+		var med = data[index]["media"];
+		// console.log("med\t",med);
+		if(med!==undefined){
+			var container = document.createElement('div');
+			container.setAttribute('class','media');
+			med=med.split(" ");
+			console.log(med);
+
+		}
+
+	}
+
+
 });
